@@ -1,0 +1,17 @@
+{
+  "name": "openzapit-net-protocol",
+  "scripts": {
+    "prebuild": "flatc --python --ts -o src/__generated__ fbs/*.fbs",
+    "build": "tsc -b",
+    "np": "node build/dist/np.js"
+  },
+  "dependencies": {
+    "flatbuffers": "^25.1.24"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3"
+  }
+}

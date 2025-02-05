@@ -1,0 +1,17 @@
+//
+// Zap-It Protocol
+//
+// Used for communication between lightweight clients and the overmind
+//
+
+namespace OpenZapIt;
+
+enum EventType : int { Ping = 0 }
+
+table Event {
+  id:int;
+  sender:int;
+  type:EventType;
+}
+
+root_type Event;

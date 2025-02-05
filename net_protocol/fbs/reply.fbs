@@ -1,0 +1,14 @@
+//
+// Zap-It Protocol
+//
+// Used for communication between lightweight clients and the overmind
+//
+
+namespace OpenZapIt;
+
+table Reply {
+  id:int;
+  sender:int;
+}
+
+root_type Reply;
