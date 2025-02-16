@@ -3,7 +3,10 @@
 
 all: *.py python/venv ../net_protocol/build/python/OpenZapIt/*.py
 	ls *.py | xargs -n 1 ./python/venv/bin/ampy --port /dev/ttyACM0 put
-	# ./python/venv/bin/ampy --port /dev/ttyACM0 put ../net_protocol/build/python/OpenZapIt
+	./python/venv/bin/ampy --port /dev/ttyACM0 rmdir /OpenZapIt
+	./python/venv/bin/ampy --port /dev/ttyACM0 mkdir /OpenZapIt
+	ls ../net_protocol/build/python/OpenZapIt/*.py | xargs -n 1 basename | xargs -I {} -n 1 ./python/venv/bin/ampy --port /dev/ttyACM0 put ../net_protocol/build/python/OpenZapIt/{} /OpenZapIt/{}
+
 	
 
 python/venv:
